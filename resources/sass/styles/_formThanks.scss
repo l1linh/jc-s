@@ -1,0 +1,28 @@
+section[class$="thanks"] {
+  padding-bottom: 0;
+  padding-top: 0;
+  width: 100%;
+  header + div {
+    margin: 30px 0;
+    @include xs {
+      margin: 15px 0 30px;
+      font-size: $fontSizeSmall;
+    }
+    div.contact {
+        text-align: right;
+        margin-top: 1.5rem;
+    }
+  }
+
+  aside[class$="Btns"] {
+    overflow: hidden;
+    a[class$="Job"] {
+      @extend %submitBtnBase;
+      text-align: center;
+      margin: 0 auto;
+      width: 300px;
+      float: none;
+      color: $submitBtnTextColor;
+    }
+  }
+}

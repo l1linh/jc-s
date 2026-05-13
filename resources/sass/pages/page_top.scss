@@ -1,0 +1,20 @@
+//共通設定読み込み
+@import "resources/sass/pages/common";
+#top {
+  //レイアウト読み込み
+  @import "resources/sass/layouts/layoutTop";
+
+  //ページ内要素
+  //@import "resources/sass/styles/topMovie";
+  @import "resources/sass/styles/mvSlider";
+  @import "resources/sass/styles/quickSearch";
+  @import "resources/sass/styles/combineSearch";
+  //@import "resources/sass/styles/search_areaMap";
+  @import "resources/sass/styles/searchBox";
+  @import "resources/sass/styles/latestJob";
+  @import "resources/sass/styles/recommendJob";
+  @import "resources/sass/styles/topContentBox";
+  @import "resources/sass/styles/linkBoxAbout";
+
+
+}

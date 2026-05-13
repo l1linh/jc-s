@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+@import url("./ress.min.css");
+
+
+
+*------------------------------------------------------------
+common
+------------------------------------------------------------*/
+body {
+  font-family: 'Noto Sans JP', 'Century Gothic', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 游ゴシック体, YuGothic, "Yu Gothic Medium", 游ゴシック, 'Yu Gothic', メイリオ, Meiryo, sans-serif;
+}
+
+
+
+#top * {
+  box-sizing: border-box;
+}
+
+#top a {
+  transition: opacity .3s;
+}
+
+#top a[href^="tel:"] {
+  display: inline-block;
+  transition: none;
+}
+
+#top a:hover {
+  text-decoration: none;
+}
+
+#top a:focus-visible {
+  outline: none;
+}
+
+#top img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+#top .js-fadein {
+  opacity: 0;
+  transform: translate(0, 20px);
+  transition-property: opacity, transform;
+  transition-duration: 1s;
+}
+
+#top .scroll-in {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+#top .pc-br {
+  display: none;
+}
+
+#top .sp-br {
+  display: inline;
+}
+
+#top .inner {
+  width: calc(100% - 24px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media print, screen and (min-width: 768px) {
+  
+  #top .sp-br {
+    display: none;
+  }
+  
+  #top .pc-br {
+    display: inline;
+  }
+  
+
+
+
+
+}

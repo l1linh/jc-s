@@ -1,0 +1,53 @@
+SetEnvIf User-Agent "SemrushBot" deny_bot
+SetEnvIf User-Agent "BLEXBot" deny_bot
+SetEnvIf User-Agent "MJ12bot" deny_bot
+SetEnvIf User-Agent "ltx71" deny_bot
+SetEnvIf User-Agent "CCBot" deny_bot
+SetEnvIf User-Agent "DotBot" deny_bot
+SetEnvIf User-Agent "Mappy" deny_bot
+SetEnvIf User-Agent "YandexBot" deny_bot
+SetEnvIf User-Agent "Bytespider" deny_bot
+SetEnvIf User-Agent "bytespider" deny_bot
+SetEnvIf User-Agent "Amazonbot" deny_bot
+SetEnvIf User-Agent "amazonbot" deny_bot
+SetEnvIf User-Agent "AhrefsBot" deny_bot
+SetEnvIf User-Agent "ahrefsBot" deny_bot
+SetEnvIf User-Agent "facebookexternalhit" deny_bot
+
+order Allow,Deny
+Allow from all
+Deny from env=deny_bot
+
+SetEnvIfNoCase User-Agent "Bytespider" ua_key=on
+SetEnvIfNoCase User-Agent "Amazonbot" ua_key=on
+SetEnvIfNoCase User-Agent "AhrefsBot" ua_key=on
+SetEnvIfNoCase User-Agent "facebookexternalhit" ua_key=on
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    RewriteBase /jc-s/
+    RewriteCond %{ENV:ua_key} on
+    RewriteRule ^(.*)$ - [F,L]
+    RewriteRule ^server-status$ - [L]
+    RewriteRule ^server-info$ - [L]
+    RewriteRule ^.well-known$ - [L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>

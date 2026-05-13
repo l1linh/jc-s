@@ -1,0 +1,1069 @@
+
+
+/*============================
+combineSearch　クイックサーチ
+============================*/
+.combineSearch {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 0 50px 0;
+  width: 100%;
+
+  @include xs {
+    width: calc(100% - 50px);
+    letter-spacing: normal;
+    margin: 0 auto;
+    padding: 0 0 2px 0;
+    min-width: 330px;
+  }
+  .combineSearchWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 44px);
+    //max-width: $contentWidth;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #FFF;
+    padding-bottom: 18px;
+    //border-radius: 10px;
+    box-shadow: (0 3px 6px rgba(0,0,0,0.1));
+    @include xs {
+      display: block;
+      width: calc(100% - 4px);
+      padding: 0 0 15px 0;
+      box-shadow: (0 1px 3px rgba(0,0,0,0.1));
+      border-radius: 0;
+    }
+  }
+
+  h3 {
+    width: 190px;
+    vertical-align: middle;
+    letter-spacing: normal;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    font-weight: 700;
+    font-size: rem(20);
+    color: #000;
+    line-height: 1.4;
+    @include xs {
+      display: none;
+      background: transparent;
+      padding: 10px;
+      font-size: rem(18);
+      width: 100%;
+    }
+  }
+  //h3
+  div.selectBox {
+    width: 100%; //178px "お仕事クイック検索"(タイトル)のwidth, 25px タイトルの右マージン
+    letter-spacing: normal;
+    //@include xs {
+    //  width: 100%;
+    //}
+    .combineSearchTitle {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        padding: 0;
+        background: #60B459;
+        color: $white;
+        font-size: rem(24);
+        font-weight: 700;
+        position: relative;
+        font-family: "Noto Sans JP", sans-serif;
+        @include minWidthXs {
+            height :64px;
+            padding-left: 30px;
+            @media screen and (max-width: 1244px) {
+                padding-left: 18px;
+            }
+        }
+        @include xs {
+            height :50px;
+            padding-left: 10px;
+            font-size: rem(18);
+        }
+        &::before {
+            display: inline-block;
+            content: "";
+            width: 36px;
+            height: 36px;
+            background-image: url("#{$imgDir}icon/search_icon.png");
+            background-size: contain;
+            margin-right: 10px;
+            mix-blend-mode: screen;
+            @include xs {
+                margin-right: 5px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    div.selectBoxInner {
+      display: block;
+      padding: 18px 30px 0;
+      width: 100%;
+      @include minWidthXs {
+          @media screen and (max-width: 1244px) {
+              padding: 18px 18px 0;
+          }
+      }
+      @include xs {
+        display: block;
+        width: 100%;
+        max-width: $contentWidth;
+        margin: 0 auto;
+        padding: 5px 15px 0;
+      }
+
+      .boxFlex {
+          margin-bottom: 10px;
+          @include minWidthXs {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+          }
+          &.freeword {
+              flex-wrap: wrap;
+              h4 {
+                  width: 100%;
+                  color: #3E3E3E;
+                  font-size: rem(18);
+                  font-weight: 700;
+                  @include xs {
+                      font-size: rem(16);
+                  }
+              }
+              @include minWidthXs {
+                  margin-top: 20px;
+                  margin-bottom: 0;
+              }
+              @include xs {
+                  display: flex;
+                  border-top: 2px solid #FFF;
+                  border-bottom: 2px solid #FFF;
+              }
+          }
+          &.counter {
+              display: flex;
+              margin-bottom: 0;
+              flex-basis: 500px;
+              @include minWidthXs {
+                  margin-left: 50px;
+                  @media screen and (max-width: 1244px) {
+                      margin-left: 25px;
+                  }
+              }
+              @include xs {
+                  margin-top: 23px;
+                  display: flex;
+                  justify-content: center;
+              }
+              .submitBtnWrapper {
+                  @include minWidthXs {
+                      margin-left: 18px;
+                      flex-basis: 340px;
+                  }
+                  @include xs {
+                      margin-top: 0;
+                      margin-left: 16px;
+                      flex-basis: 175px;
+                  }
+              }
+          }
+          &:first-child {
+              span {
+                  position: relative;
+                  @include minWidthXs {
+                      padding-top: 35px;
+                  }
+                  &.title {
+                      overflow: hidden;
+                      @include xs {
+                          padding-top: 28px;
+                          margin-top: 10px;
+                      }
+                      &::before {
+                          content: "";
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          display: inline-block;
+                          width: 20px;
+                          height: 20px;
+                          background-size: contain;
+                          transform: translateY(5px);
+                          @include xs {
+                              transform: translateY(3px);
+                          }
+                      }
+                      &::after {
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          display: inline-block;
+                          width: calc(100% - 30px);
+                          height: 30px;
+                          font-family: "Noto Sans JP", sans-serif;
+                          font-weight: 700;
+                          font-size: rem(18);
+                          text-align: left;
+                          @include xs {
+                              width: calc(100% - 23px);
+                              font-size: rem(16);
+                          }
+                      }
+                  }
+                  &#pref {
+                      &::after {
+                          content: "エリア";
+                      }
+
+                  }
+                  &#quickSearchJobBox {
+                      &::after {
+                          content: "職種";
+                      }
+                  }
+                  &#quickSearchFeatureBox {
+                      &::after {
+                          content: "こだわり";
+                      }
+                  }
+              }
+          }
+      }
+
+      span:not([class^="tick"]) {
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: 144px;
+        color: #000;
+        text-align: center;
+        font-size: rem(35);
+
+        &.match-label {
+            flex-basis: 60px;
+            flex-shrink: 0;
+            margin-right: 5px;
+            font-size: rem(18);
+            font-weight: 700;
+            color: #3E3E3E;
+            text-align: left;
+            @include xs {
+                font-size: rem(14);
+                flex-basis: max-content;
+                margin-right: 4px;
+            }
+        }
+
+        &.freeword {
+            padding-top: 5px;
+            flex-basis: 590px;
+            @include xs {
+                padding-top: 0;
+            }
+        }
+
+        @include minWidthXs {
+            &#city, &#quickSearchJobBox, &#quickSearchFeatureBox {
+                flex-basis: 200px;
+            }
+        }
+
+        @include xs {
+          display: block;
+          width: 100%;
+          padding: 0;
+          &:not(:first-child) {
+            margin-top: 5px;
+          }
+        }
+        &.pcLayout {
+          color: $baseColor;
+        }
+        select, input {
+          @extend %quickSearchAppearanceNoneBase;
+          background-color: #ffffff;
+          padding: 0 20px;
+          font-size: rem(14);
+          display: block;
+          width: 100%;
+          height: 36px;
+          border: 1px solid #707070;
+          -webkit-transition: all .3s;
+          transition: all .3s;
+          color: $subColorDarkGray;
+
+          &::-ms-expand {
+            display: none;
+          }
+
+          background-image: url("#{$imgDir}icon/icon_triangle_black.svg");
+          background-repeat: no-repeat;
+          background-position: right 10px center;
+
+          @include minWidthXs {
+              &:hover {
+                  cursor: pointer;
+              }
+          }
+          @include xs {
+              padding: 0 15px;
+              font-size: rem(16);
+          }
+
+          &.locked {
+            color: #979797;
+            background-image: url("#{$imgDir}icon/icon_triangle_gray.svg");
+          }
+        }
+
+        input {
+          background-image: none;
+          &#quickSearchJob, &#quickSearchFeature {
+              background-image: url("#{$imgDir}icon/icon_plus.svg");
+              background-repeat: no-repeat;
+              background-position: right 10px center;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              @include xs {
+
+              }
+          }
+        }
+
+        //select
+        button {
+          @extend %quickSearchAppearanceNoneBase;
+          //padding: 10px 20px;
+          //background: $searchSubmitBtnColor;
+          background: #FD8C34;
+          display: block;
+          color: $searchSubmitBtnFontColor;
+          font-size: rem(18);
+          font-weight: 700;
+          -webkit-transition: all .3s;
+          transition: all .3s;
+          width: 100%;
+          height: 50px;
+          border: solid 2px #FD8C34;
+          position: relative;
+          border-radius: 25px;
+          overflow: hidden;
+          padding: 0;
+          z-index: 0;
+          @media print, screen and (min-width: 1201px){
+              &:hover {
+                  cursor: pointer;
+                  color: #FD8C34;
+                  &::before {
+                      transform: translateX(0);
+                  }
+              }
+          }
+          @include xs {
+              height: 40px;
+              padding: 0;
+              font-size: rem(14);
+              border-radius: 20px;
+          }
+          &::before {
+              content: "";
+              position: absolute;
+              display: block;
+              top: 0;
+              left: 0;
+              z-index: -1;
+              width: calc(100% + 2px);
+              height: 100%;
+              background: $white;
+              transition: all .3s;
+              transform: translateX(-100%);
+          }
+        }//button
+
+        &.crossSelect{
+          flex-basis: 60px;
+          padding: 0;
+          @include xs {
+            line-height: .5em;
+          }
+        }
+
+      }//span
+
+      #quickSearchFeatureBox, #quickSearchJobBox {
+        display: block;
+        width: 100%;
+        >input, select {
+          width: 100%;
+          background-color: $white;
+          color: $black;
+          font-size: rem(14);
+          padding: 10px 20px 10px 10px;
+          @include xs {
+              padding: 10px 15px;
+              font-size: rem(16);
+          }
+          &::placeholder {
+            color: #CCCCCC;
+            opacity: 1;
+          }
+          &#quickSearchFeature, &#quickSearchJob {
+              &::placeholder {
+                  color: $black;
+                  opacity: 1;
+              }
+          }
+          @include minWidthXs {
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .tick {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
+        font-family: "Noto Sans JP", sans-serif;
+        line-height: 1.5 !important;
+      }
+
+      .tick-flip,.tick-text-inline {
+        font-size: rem(32);
+        @include xs {
+            font-size: rem(24);
+        }
+      }
+
+      .tick-label {
+        padding-left: 0.5rem;
+        font-size: rem(18);
+        font-weight: 700;
+        color: $black !important;
+        @include xs {
+            font-size: rem(14);
+            padding-left: 0;
+        }
+      }
+
+      .tick-char {
+        width: 1.5em;
+      }
+
+      .tick-text-inline {
+        display: inline-block;
+        text-align: center;
+      }
+
+      .tick-text-inline+.tick-text-inline {
+        margin-left:-.325em;
+      }
+
+      .tick-group {
+        margin:0 .5em;
+        text-align:center;
+      }
+
+      .tick-text-inline {
+        color: #595d63 !important;
+      }
+
+      .tick-flip-panel {
+        color: #60B459 !important;
+        font-family: roboto, sans-serif;
+      }
+
+      .tick-flip-panel-text-wrapper {
+        line-height: 1.4 !important;
+      }
+
+      .tick-flip-panel-front, .tick-flip-panel-back {
+          box-shadow: none !important;
+          &::after {
+              content: none !important;
+          }
+      }
+
+      .tick-flip-panel-front-shadow, .tick-flip-panel-back-shadow {
+          background: transparent !important;
+      }
+
+      .tick-flip-panel {
+        background-color: #FFF !important;
+      }
+
+      .tick-flip {
+        //border: 2px solid #FF6666;
+        border-radius: 0 !important;
+        margin-left: 0;
+        margin-right: 0;
+        min-width: unset !important;
+        letter-spacing: 0 !important;
+        text-indent: 0 !important;
+      }
+
+      .tick-flip-shadow {
+          box-shadow: none !important;
+      }
+
+    }//.selectBoxInner
+
+
+    //モーダル要素関連スタイル start
+    .modalArea {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: #000;
+    }
+
+    .modalBg {
+      width: 100%;
+      height: 100%;
+      background-color: #707070;
+    }
+
+    .modalWrapper {
+      position: absolute;
+      background-color: #fff;
+      @include minWidthXs {
+        top: calc(50% + 50px);
+        left: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        width: 1080px;
+        height: 780px;
+        padding-bottom: 40px;
+        border-radius: 0;
+        transform:translate(-50%,-50%);
+        @include middleHeight {
+          top: calc(50% + 20px);
+        }
+        @include underHeight {
+          top: calc(50% + 20px);
+          max-height: 760px;
+        }
+      }
+
+      @include xs {
+        display: block;
+        width: calc(100% - 24px);
+        height: calc(100% - (25px + 55px + 30px));
+        top: calc(25px + 30px);
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 0;
+      }
+
+      .searchBtns {
+        display: flex;
+        margin: 0 auto;
+        @include minWidthXs {
+          transform: translateX(calc((130px + 27px) / 2));
+          @include underHeight {
+            transform: translate(calc((130px + 27px) / 2), -20px);
+          }
+        }
+        @include xs {
+          justify-content: center;
+          transform: translateY(-55px);
+          padding: 10px 0;
+          background-color: #F7F5F2;
+        }
+
+
+        button {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 50px;
+          border: none;
+          overflow: hidden;
+          @include xs {
+            height: 35px;
+          }
+
+          span {
+            position: relative;
+            z-index: 1;
+          }
+
+          &.reset-all {
+            width: 160px;
+            margin-right: 37px;
+            background-color: #B4B4B4;
+            span {
+              color: $black;
+              font-weight: 500;
+              font-size: rem(14);
+              @include xs {
+                font-size: rem(13);
+              }
+            }
+            &::before, &::after {
+              background-color: $black;
+            }
+            @include minWidthXs {
+              &:hover {
+                span {
+                  color: $white;
+                }
+              }
+            }
+          }
+          &.search-exec {
+            width: 150px;
+            background-color: $black;
+            span {
+              color: $white;
+              font-weight: 700;
+              font-size: rem(16);
+              @include xs {
+                font-size: rem(13);
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    .closeModal {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateY(-100%);
+      font-size: rem(60);
+      color: $white;
+      cursor: pointer;
+      @include xs {
+        top: -2px;
+        //right: 10px;
+        //transform: unset;
+        font-size: rem(30);
+        line-height: 1;
+        z-index: 1500;
+      }
+    }
+
+    .modalAxis {
+      width: 100%;
+      @include xs {
+          height: 100%;
+      }
+    }
+
+    .axisTitle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 80px;
+      background-color: #7FBE59;
+      color: $white;
+      font-size: rem(20);
+      font-weight: 700;
+      strong {
+        font-size: rem(28);
+          @include xs {
+              font-size: rem(18);
+          }
+      }
+      @include xs {
+        height: 50px;
+        font-size: rem(14);
+        position: relative;
+        z-index: 1000;
+
+      }
+    }
+
+    .modalContents {
+      display: block;
+      width: 100%;
+      height: 550px;
+      overflow-y: scroll;
+      @include xs {
+        height: calc(100% - 40px);
+        padding-bottom: 20px;
+      }
+
+      &.pcContent {
+        @include xs {
+          display: none !important; //jsでの表示回避
+        }
+      }
+
+      &.spContent {
+        padding: 0 12px;
+
+        >ul {
+          border-left: 1px solid $black;
+          border-right: 1px solid $black;
+        }
+
+        @include minWidthXs {
+          display: none !important; //jsでの表示回避
+        }
+      }
+    }
+
+    .parentBox {
+      display: flex;
+      width: 100%;
+      height: 55px;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 2px solid #000;
+      @include xs {
+        height: 45px;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+      }
+    }
+
+    .childrenBox {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      background-color: $white;
+      @include xs {
+        overflow-y: scroll;
+      }
+    }
+
+    li {
+      &.parent, &.child {
+        display: inline-block;
+        border-bottom: 2px solid transparent;
+        position: relative;
+      }
+
+      &.parent {
+        margin: 0;
+          display: flex;
+          align-items: center;
+          padding: 20px 80px;
+          @include xs {
+              display: block;
+              width: 100%;
+              padding: 15px 25px 15px 45px;
+          }
+          >ul.parentInfo {
+              @include minWidthXs {
+                  position: relative;
+                  flex-basis: 270px;
+                  flex-shrink: 0;
+              }
+              @include xs {
+                  display: flex;
+                  align-items: center;
+              }
+              li {
+                  font-size: rem(20);
+                  font-weight: 500;
+                  position: relative;
+                  @include xs {
+                      font-size: rem(16);
+                  }
+                  &.parentName {
+                      &::before {
+                          content: "";
+                          display: inline-block;
+                          width: 20px;
+                          height: 2px;
+                          background: #60B459;
+                          position: absolute;
+                          top: 50%;
+                          left: -10px;
+                          transform: translate(-100%, -50%);
+                          @include xs {
+                              left: -5px;
+                              width: 15px;
+                          }
+                      }
+                  }
+                  &.title {
+                      display: inline-block;
+                      @include xs {
+                          display: flex;
+                          align-items: center;
+                      }
+                      label {
+                          font-size: rem(14);
+                          color: #2E9226;
+                          font-weight: 400;
+                          text-decoration: underline;
+                          position: relative;
+                          @include minWidthXs {
+                              display: block;
+                              margin-top: 9px;
+                              padding-left: 25px;
+                              cursor: pointer;
+                          }
+                          @include xs {
+                              flex-shrink: 0;
+                              margin-left: 10px;
+                              padding-left: 17px;
+                              font-size: rem(12);
+                          }
+                          &::before {
+                              content: "";
+                              position: absolute;
+                              top: 50%;
+                              left: 0;
+                              display: inline-block;
+                              width: 12px;
+                              height: 12px;
+                              border: 1px solid #707070;
+                              background-size: contain;
+                              transform: translateY(-40%);
+                          }
+                      }
+
+                      &.selected {
+                          label::after {
+                              text-decoration: none;
+                              content: "\f00c";
+                              display: inline;
+                              font-family: "Font Awesome 5 Free";
+                              font-size: rem(20);
+                              color: #60B459;
+                              font-weight: 700;
+                              position: absolute;
+                              top: 50%;
+                              left: 0;
+                              transform: translateY(-60%);
+                              @include xs {
+                                  font-size: rem(14);
+                                  transform: translateY(-50%);
+                              }
+                          }
+                      }
+                  }
+                  //&.select-all {
+                  //    font-size: rem(14);
+                  //    color: #2E9226;
+                  //    font-weight: 400;
+                  //    text-decoration: underline;
+                  //    @include minWidthXs {
+                  //        margin-top: 9px;
+                  //        cursor: pointer;
+                  //    }
+                  //    @include xs {
+                  //        flex-shrink: 0;
+                  //        margin-left: 10px;
+                  //        font-size: rem(12);
+                  //    }
+                  //}
+              }
+          }
+        &:nth-of-type(even) {
+            background: #F3F6F5;
+            .child {
+                background: transparent;
+            }
+        }
+        input {
+          display: none;
+        }
+      }
+
+      &.child {
+        //width: 24%;
+        margin: 0.5rem 0 0 0;
+        border-bottom: none;
+        background-color: #FFF;
+        padding: 10px 20px;
+
+        @include xs {
+           position: relative;
+           padding: 0 5px 0 10px;
+        }
+
+        label {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            vertical-align: middle;
+            padding-left: 25px;
+            font-weight: 400;
+            font-size: rem(16);
+            @include minWidthXs {
+              cursor: pointer;
+            }
+            @include xs {
+                font-size: rem(13);
+                padding-left: 18px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                border: 1px solid #707070;
+                background-size: contain;
+                transform: translateY(-40%);
+            }
+        }
+
+        input {
+          //display: inline-block;
+          display: none;
+          //opacity: 0;
+          position: relative;
+        }
+
+        &.selected {
+          label::after {
+            content: "\f00c";
+            display: inline;
+            font-family: "Font Awesome 5 Free";
+            font-size: rem(20);
+            color: #60B459;
+            font-weight: 700;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-60%);
+            @include xs {
+                font-size: rem(14);
+                transform: translateY(-50%);
+            }
+          }
+        }
+      }
+    }
+
+    .quickTokuchoBtns, .quickSyksyBtns {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        @include minWidthXs {
+            margin: 40px auto 0;
+        }
+        @include xs {
+            position: absolute;
+            height: 40px;
+            bottom: -5px;
+            left: 50%;
+            transform: translate(-50%, 100%);
+        }
+        >button {
+            height: 65px;
+            width: 245px;
+            border-radius: 33px;
+            @include xs {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                border-radius: 18px;
+            }
+            &[class^="reset-quick"] {
+                background: #DADADA;
+                transition: all 0.3s ease;
+                span {
+                    color: #3E3E3E;
+                    font-size: rem(20);
+                    font-weight: 500;
+                    @include xs {
+                        font-size: rem(12);
+                    }
+                }
+                @media print, screen and (min-width: 1201px){
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+                margin-right: 52px;
+                @include xs {
+                    margin-right: 10px;
+                    width: calc(50% - 5px);
+                }
+            }
+            &[class^="quick-exec"] {
+                //background: #FFF;
+                background: #FD8C34;
+                border: 2px solid #FD8C34;
+                width: 245px;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+                z-index: 0;
+                box-sizing: border-box;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    display: inline-block;
+                    background: #FFF;
+                    top: -1px;
+                    left: 0;
+                    z-index: -1;
+                    width: calc(100% + 2px);
+                    height: calc(100% + 2px);
+                    transition: all 0.3s ease;
+                    transform: translateX(-100%);
+                }
+
+                span {
+                    transition: all 0.3s ease;
+                    color: #FFF;
+                    font-size: rem(20);
+                    font-weight: 500;
+                    @include xs {
+                        font-size: rem(12);
+                    }
+                }
+                @media print, screen and (min-width: 1201px){
+                    &:hover {
+                        &::before {
+                            transform: translateX(0);
+                        }
+                        span {
+                            color: #FD8C34;
+                        }
+                    }
+                }
+                @include xs {
+                    width: calc(50% - 5px);
+                }
+                &.locked {
+                    pointer-events: none;
+                    background: #DADADA;
+                    border: 2px solid #DADADA;
+                    span {
+                      color: #FFF;
+                    }
+                }
+            }
+        }
+    }
+
+    //モーダル要素関連スタイル end
+
+  }//.selectBox
+}//combineSearch
+

@@ -1,0 +1,733 @@
+{
+    "form": {
+        "entry": {
+            "custom": {
+                "profile": {
+                    "referralComment": {
+                        "index": 10,
+                        "label": "コメント",
+                        "referralComment": {
+                            "rule": "max:1000",
+                            "type": "string",
+                            "value": "",
+                            "fieldType": "textarea"
+                        }
+                    }
+                }
+            },
+            "profile": {
+                "name": {
+                    "index": 1,
+                    "lastName": {
+                        "rule": "max:16",
+                        "type": "string",
+                        "index": 1,
+                        "required": true
+                    },
+                    "firstName": {
+                        "rule": "max:16",
+                        "type": "string",
+                        "index": 2,
+                        "required": true
+                    }
+                },
+                "nameRuby": {
+                    "index": 2,
+                    "lastKana": {
+                        "rule": "max:32",
+                        "type": "string",
+                        "index": 1,
+                        "required": true
+                    },
+                    "firstKana": {
+                        "rule": "max:32",
+                        "type": "string",
+                        "index": 2,
+                        "required": true
+                    }
+                },
+                "birthday": {
+                    "index": 3,
+                    "dobDay": {
+                        "rule": "digits_between:1,2",
+                        "type": "numeric",
+                        "index": 3,
+                        "required": true
+                    },
+                    "dobYear": {
+                        "rule": "digits:4",
+                        "type": "numeric",
+                        "index": 1,
+                        "required": true
+                    },
+                    "dobMonth": {
+                        "rule": "digits_between:1,2",
+                        "type": "numeric",
+                        "index": 2,
+                        "required": true
+                    }
+                },
+                "telNumber": {
+                    "index": 5,
+                    "telNumber": {
+                        "rule": "max:13",
+                        "type": "string",
+                        "required": true
+                    }
+                },
+                "gender": {
+                  "index": 4,
+                  "gender": {
+                    "required": false,
+                    "type": "numeric",
+                    "rule": "between:0,2"
+                  }
+                },
+                "address": {
+                    "index": 6,
+                    "city": {
+                        "rule": "between:101,99999",
+                        "type": "integer",
+                        "index": 3,
+                        "required": true
+                    },
+                    "street": {
+                        "rule": null,
+                        "type": "string",
+                        "index": 4,
+                        "required": false
+                    },
+                    "zipCode": {
+                        "rule": "digits_between:1,7",
+                        "type": "numeric",
+                        "index": 1,
+                        "required": false
+                    },
+                    "prefecture": {
+                        "rule": "between:1,47",
+                        "type": "integer",
+                        "index": 2,
+                        "required": true
+                    }
+                },
+                "mailAddress": {
+                    "index": 7,
+                    "mailAddress": {
+                        "rule": "max:256",
+                        "type": "email",
+                        "required": true
+                    }
+                }
+            }
+        },
+      
+      
+      
+        "apply": {
+            "pr": {
+                "pr": {
+                    "pr": {
+                        "rule": "max:1000",
+                        "type": "string",
+                        "required": false
+                    }
+                }
+            },
+            "skill": {
+                "pcSkill": {
+                    "index": 2,
+                    "webSkill": {
+                        "rule": "between:1,3",
+                        "type": "integer",
+                        "index": 5,
+                        "required": false
+                    },
+                    "wordSkill": {
+                        "rule": "between:1,3",
+                        "type": "integer",
+                        "index": 1,
+                        "required": false
+                    },
+                    "excelSkill": {
+                        "rule": "between:1,3",
+                        "type": "integer",
+                        "index": 2,
+                        "required": false
+                    },
+                    "accessSkill": {
+                        "rule": "between:1,3",
+                        "type": "integer",
+                        "index": 3,
+                        "required": false
+                    },
+                    "otherPCSkill": {
+                        "rule": "max:1000",
+                        "type": "string",
+                        "index": 6,
+                        "required": false
+                    },
+                    "powerpointSkill": {
+                        "rule": "between:1,3",
+                        "type": "integer",
+                        "index": 4,
+                        "required": false
+                    }
+                },
+                "language": {
+                    "index": 1,
+                    "stepScore": {
+                        "rule": "between:1,7",
+                        "type": "integer",
+                        "index": 5,
+                        "required": false
+                    },
+                    "toeflScore": {
+                        "rule": "between:0,999",
+                        "type": "integer",
+                        "index": 4,
+                        "required": false
+                    },
+                    "toeicScore": {
+                        "rule": "between:0,999",
+                        "type": "integer",
+                        "index": 3,
+                        "required": false
+                    },
+                    "otherBusiness": {
+                        "rule": "between:1,3",
+                        "type": "integer",
+                        "index": 8,
+                        "required": false
+                    },
+                    "otherLanguage": {
+                        "rule": "between:1,9",
+                        "type": "integer",
+                        "index": 6,
+                        "required": false
+                    },
+                    "businessEnglish": {
+                        "rule": "between:1,3",
+                        "type": "integer",
+                        "index": 2,
+                        "required": false
+                    },
+                    "otherConversation": {
+                        "rule": "between:1,3",
+                        "type": "integer",
+                        "index": 7,
+                        "required": false
+                    },
+                    "englishConversation": {
+                        "rule": "between:1,3",
+                        "type": "integer",
+                        "index": 1,
+                        "required": false
+                    }
+                },
+                "qualification": {
+                    "index": 3,
+                    "qualification": {
+                        "rule": "max:1000",
+                        "type": "string",
+                        "required": false
+                    }
+                }
+            },
+            "career": {
+                "industry": {
+                    "index": 3,
+                    "industry1": {
+                        "rule": "between:1,99",
+                        "type": "integer",
+                        "index": 1,
+                        "required": false
+                    },
+                    "industry2": {
+                        "rule": "between:1,99",
+                        "type": "integer",
+                        "index": 2,
+                        "required": false
+                    },
+                    "industry3": {
+                        "rule": "between:1,99",
+                        "type": "integer",
+                        "index": 3,
+                        "required": false
+                    }
+                },
+                "occupation": {
+                    "index": 2,
+                    "period1": {
+                        "rule": "between:0,9",
+                        "type": "integer",
+                        "index": 2,
+                        "required": false
+                    },
+                    "period2": {
+                        "rule": "between:0,9",
+                        "type": "integer",
+                        "index": 4,
+                        "required": false
+                    },
+                    "period3": {
+                        "rule": "between:0,9",
+                        "type": "integer",
+                        "index": 6,
+                        "required": false
+                    },
+                    "period4": {
+                        "rule": "between:0,9",
+                        "type": "integer",
+                        "index": 8,
+                        "required": false
+                    },
+                    "period5": {
+                        "rule": "between:0,9",
+                        "type": "integer",
+                        "index": 10,
+                        "required": false
+                    },
+                    "occupation1": {
+                        "rule": "between:1,9999",
+                        "type": "integer",
+                        "index": 1,
+                        "required": false
+                    },
+                    "occupation2": {
+                        "rule": "between:1,9999",
+                        "type": "integer",
+                        "index": 3,
+                        "required": false
+                    },
+                    "occupation3": {
+                        "rule": "between:1,9999",
+                        "type": "integer",
+                        "index": 5,
+                        "required": false
+                    },
+                    "occupation4": {
+                        "rule": "between:1,9999",
+                        "type": "integer",
+                        "index": 7,
+                        "required": false
+                    },
+                    "occupation5": {
+                        "rule": "between:1,9999",
+                        "type": "integer",
+                        "index": 9,
+                        "required": false
+                    }
+                },
+                "changeNumber": {
+                    "index": 1,
+                    "changeNumber": {
+                        "rule": "between:0,5",
+                        "type": "integer",
+                        "required": false
+                    }
+                },
+                "jobHistories": {
+                    "index": 6,
+                    "endYearA": {
+                        "rule": "digits:4",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "endYearB": {
+                        "rule": "digits:4",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "endYearC": {
+                        "rule": "digits:4",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "endYearD": {
+                        "rule": "digits:4",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "endYearE": {
+                        "rule": "digits:4",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "endMonthA": {
+                        "rule": "digits_between:1,2",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "endMonthB": {
+                        "rule": "digits_between:1,2",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "endMonthC": {
+                        "rule": "digits_between:1,2",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "endMonthD": {
+                        "rule": "digits_between:1,2",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "endMonthE": {
+                        "rule": "digits_between:1,2",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "startYearA": {
+                        "rule": "digits:4",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "startYearB": {
+                        "rule": "digits:4",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "startYearC": {
+                        "rule": "digits:4",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "startYearD": {
+                        "rule": "digits:4",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "startYearE": {
+                        "rule": "digits:4",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "startMonthA": {
+                        "rule": "digits_between:1,2",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "startMonthB": {
+                        "rule": "digits_between:1,2",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "startMonthC": {
+                        "rule": "digits_between:1,2",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "startMonthD": {
+                        "rule": "digits_between:1,2",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "startMonthE": {
+                        "rule": "digits_between:1,2",
+                        "type": "numeric",
+                        "required": false
+                    },
+                    "companyNameA": {
+                        "rule": "max:50",
+                        "type": "string",
+                        "required": false
+                    },
+                    "companyNameB": {
+                        "rule": "max:50",
+                        "type": "string",
+                        "required": false
+                    },
+                    "companyNameC": {
+                        "rule": "max:50",
+                        "type": "string",
+                        "required": false
+                    },
+                    "companyNameD": {
+                        "rule": "max:50",
+                        "type": "string",
+                        "required": false
+                    },
+                    "companyNameE": {
+                        "rule": "max:50",
+                        "type": "string",
+                        "required": false
+                    },
+                    "jobDescriptionA": {
+                        "rule": "max:5000",
+                        "type": "string",
+                        "required": false
+                    },
+                    "jobDescriptionB": {
+                        "rule": "max:5000",
+                        "type": "string",
+                        "required": false
+                    },
+                    "jobDescriptionC": {
+                        "rule": "max:5000",
+                        "type": "string",
+                        "required": false
+                    },
+                    "jobDescriptionD": {
+                        "rule": "max:5000",
+                        "type": "string",
+                        "required": false
+                    },
+                    "jobDescriptionE": {
+                        "rule": "max:5000",
+                        "type": "string",
+                        "required": false
+                    },
+                    "employmentStatusA": {
+                        "rule": "between:1,99",
+                        "type": "integer",
+                        "required": false
+                    },
+                    "employmentStatusB": {
+                        "rule": "between:1,99",
+                        "type": "integer",
+                        "required": false
+                    },
+                    "employmentStatusC": {
+                        "rule": "between:1,99",
+                        "type": "integer",
+                        "required": false
+                    },
+                    "employmentStatusD": {
+                        "rule": "between:1,99",
+                        "type": "integer",
+                        "required": false
+                    },
+                    "employmentStatusE": {
+                        "rule": "between:1,99",
+                        "type": "integer",
+                        "required": false
+                    }
+                },
+                "managementNumber": {
+                    "index": 5,
+                    "managementNumber": {
+                        "rule": "between:0,4",
+                        "type": "integer",
+                        "required": false
+                    }
+                },
+                "managementExperience": {
+                    "index": 4,
+                    "managementExperience": {
+                        "rule": "between:0,1",
+                        "type": "integer",
+                        "required": false
+                    }
+                }
+            },
+            "others": {
+                "maritalStatus": {
+                    "index": 1,
+                    "maritalStatus": {
+                        "rule": "between:0,2",
+                        "type": "integer",
+                        "required": false
+                    }
+                },
+                "currentAddress": {
+                    "index": 2,
+                    "station": {
+                        "rule": null,
+                        "type": "string",
+                        "required": false
+                    }
+                },
+                "educationBackground": {
+                    "index": 3,
+                    "schoolName": {
+                        "rule": "max:50",
+                        "type": "string",
+                        "index": 4,
+                        "required": false
+                    },
+                    "departmentName": {
+                        "rule": "max:50",
+                        "type": "string",
+                        "index": 5,
+                        "required": false
+                    },
+                    "educationLevel": {
+                        "rule": "between:1,99",
+                        "type": "integer",
+                        "index": 1,
+                        "required": false
+                    },
+                    "graduationYear": {
+                        "rule": "digits:4",
+                        "type": "numeric",
+                        "index": 2,
+                        "required": false
+                    },
+                    "graduationStatus": {
+                        "rule": "between:1,4",
+                        "type": "integer",
+                        "index": 3,
+                        "required": false
+                    }
+                }
+            },
+            "profile": {
+                "name": {
+                    "index": 1,
+                    "lastName": {
+                        "rule": "max:16",
+                        "type": "string",
+                        "index": 1,
+                        "required": true
+                    },
+                    "firstName": {
+                        "rule": "max:16",
+                        "type": "string",
+                        "index": 2,
+                        "required": true
+                    }
+                },
+                "gender": {
+                    "index": 4,
+                    "gender": {
+                        "rule": "between:0,2",
+                        "type": "numeric",
+                        "required": false
+                    }
+                },
+                "address": {
+                    "city": {
+                        "rule": "between:101,99999",
+                        "type": "integer",
+                        "index": 3,
+                        "required": true
+                    },
+                    "index": 5,
+                    "street": {
+                        "rule": null,
+                        "type": "string",
+                        "index": 4,
+                        "required": false
+                    },
+                    "zipCode": {
+                        "rule": "digits_between:1,7",
+                        "type": "numeric",
+                        "index": 1,
+                        "required": false
+                    },
+                    "prefecture": {
+                        "rule": "between:1,47",
+                        "type": "integer",
+                        "index": 2,
+                        "required": true
+                    }
+                },
+                "birthday": {
+                    "index": 3,
+                    "dobDay": {
+                        "rule": "digits_between:1,2",
+                        "type": "numeric",
+                        "index": 3,
+                        "required": true
+                    },
+                    "dobYear": {
+                        "rule": "digits:4",
+                        "type": "numeric",
+                        "index": 1,
+                        "required": true
+                    },
+                    "dobMonth": {
+                        "rule": "digits_between:1,2",
+                        "type": "numeric",
+                        "index": 2,
+                        "required": true
+                    }
+                },
+                "nameRuby": {
+                    "index": 2,
+                    "lastKana": {
+                        "rule": "max:32",
+                        "type": "string",
+                        "index": 1,
+                        "required": true
+                    },
+                    "firstKana": {
+                        "rule": "max:32",
+                        "type": "string",
+                        "index": 2,
+                        "required": true
+                    }
+                },
+                "telNumber": {
+                    "index": 6,
+                    "telNumber": {
+                        "rule": "max:13",
+                        "type": "string",
+                        "required": true
+                    }
+                },
+                "mailAddress": {
+                    "index": 7,
+                    "mailAddress": {
+                        "rule": "max:256",
+                        "type": "email",
+                        "required": true
+                    }
+                },
+                "currentOccupation": {
+                    "index": 8,
+                    "currentOccupation": {
+                        "rule": "between:1,99",
+                        "type": "integer",
+                        "required": false
+                    }
+                }
+            }
+        },
+        "entryUri": "/entry/",
+        "applyUri": "/job/"
+    },
+    "news": {
+        "sort": [
+            {
+                "idx": 1,
+                "field": "updatedAt",
+                "order": "desc"
+            },
+            {
+                "idx": 2,
+                "field": "jobId",
+                "order": "asc"
+            }
+        ],
+        "term": 3650,
+        "limit": 3
+    },
+    "equal": {
+        "sort": [
+            {
+                "idx": 1,
+                "field": "updatedAt",
+                "order": "desc"
+            },
+            {
+                "idx": 2,
+                "field": "jobId",
+                "order": "asc"
+            }
+        ],
+        "limit": 3
+    },
+    "version": "1.0.9",
+    "recommend": {
+        "sort": [
+            {
+                "idx": 1,
+                "field": "recommend",
+                "order": "desc"
+            }
+        ],
+        "limit": 10
+    }
+}

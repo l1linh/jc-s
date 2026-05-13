@@ -1,0 +1,80 @@
+*------------------------------------------------------------
+common
+------------------------------------------------------------*/
+body {
+  font-family: 'Noto Sans JP', 'Century Gothic', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 游ゴシック体, YuGothic, "Yu Gothic Medium", 游ゴシック, 'Yu Gothic', メイリオ, Meiryo, sans-serif;
+}
+
+#service {
+  font-size: 13px;
+  font-weight: 500;
+  color: red;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+
+#service * {
+  box-sizing: border-box;
+}
+
+#service a {
+  transition: opacity .3s;
+}
+
+#service a[href^="tel:"] {
+  display: inline-block;
+  transition: none;
+}
+
+#service a:hover {
+  text-decoration: none;
+}
+
+#service a:focus-visible {
+  outline: none;
+}
+
+#service img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+#service .js-fadein {
+  opacity: 0;
+  transform: translate(0, 20px);
+  transition-property: opacity, transform;
+  transition-duration: 1s;
+}
+
+#service .scroll-in {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+#service .pc-br {
+  display: none;
+}
+
+#service .sp-br {
+  display: inline;
+}
+
+#service .inner {
+  width: calc(100% - 24px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media print, screen and (min-width: 768px) {
+  
+  #service .sp-br {
+    display: none;
+  }
+  
+  #service .pc-br {
+    display: inline;
+  }
+  
+}

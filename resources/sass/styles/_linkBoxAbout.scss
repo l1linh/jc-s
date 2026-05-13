@@ -1,0 +1,15 @@
+@mixin contentWidth {
+  width: calc(100% - 24px);
+  max-width: $defInnerWidthPc;
+  margin-right: auto;
+  margin-left: auto;
+  @include minWidthXs {
+    width: 100%;
+  }
+}
+
+#linkBoxAbout {
+  .linkBoxAboutInner{
+    @include contentWidth;
+  }
+}
