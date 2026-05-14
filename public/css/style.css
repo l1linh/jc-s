@@ -70,16 +70,21 @@ body {
 
 
 
-/* #top {
-  margin-top: 100px;
-} */
+/* --------------------.combineSearch----------------------} */
 
 
 
+#top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]) select, #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]) input {
+  height: 44px !important;
+  background: #EBFDFA !important; 
+  border:  1px solid #47B08B !important;
+  border-radius: 5px !important;
+}
 
 
-
-
+#top .combineSearch .combineSearchWrapper {
+  background: none !important;
+}
 
 
 
@@ -95,22 +100,105 @@ body {
     display: inline;
   }
   
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick])#city {
+    flex-basis: 180px !important;
+  }
 
-  #top .combineSearch .combineSearchWrapper {
-    max-width: 1000px !important;
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick])#quickSearchJobBox,
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick])#quickSearchFeatureBox {
+    flex-basis: 200px !important;
+  }
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]) {
+    flex-basis: 180px !important;
+  }
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]) button {
+    background: #FFBE10 !important;
+    border: 0px !important;
   }
   #top .topContentBox .contentInner {
     max-width: 1000px !important;
   }
+  #top .combineSearch {
+    z-index: 99;
+    max-width: 900px !important;
+    margin: auto !important;
+    margin-top: -50px !important;
+    overflow: auto !important;
+  }
+
+  #top .combineSearch div.selectBox .combineSearchTitle {
+    height: 60px !important;;
+    padding-left: 30px;
+    max-width: 354px !important;;
+    margin: auto !important;;
+    border-radius: 5px ;
+    background: #47B08B !important;
+  }
+  #top .combineSearch div.selectBox div.selectBoxInner {
+    padding: 48px 30px 15px !important;
+    width: 100%;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2) !important;
+    margin-top: -30px !important;
+    border-radius: 10px;
+  }
+
+  #top .combineSearch .combineSearchWrapper {
+    box-shadow: none !important;
+  }
+
+  #top .combineSearch div.selectBox div.selectBoxInner .boxFlex.freeword h4 {
+    width: 160px !important;
+  }
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]).freeword {
+    padding-top: 0px !important; 
+    flex-basis: 480px !important;
+  }
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]) select, #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]) input {
+    height: 44px !important;
+    background: #EBFDFA !important; 
+    border:  2px solid #47B08B !important;
+    border-radius: 5px !important;
+ }
+
 
 }
+
+
 @media print, screen and (min-width: 1400px) {
 
-  #top .combineSearch .combineSearchWrapper {
-    max-width: 1200px !important;
-  }
+
   #top .topContentBox .contentInner {
     max-width: 1200px !important;
+  }
+  #top .combineSearch {
+    margin-top: -100px !important;
+    max-width:1000px !important;
+  }
+
+
+  #top .combineSearch {
+      margin: auto;
+      margin-top: -192px;
+      overflow: auto;
+  }
+
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick])#city {
+    flex-basis: 200px !important;
+  }
+
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick])#quickSearchJobBox,
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick])#quickSearchFeatureBox {
+    flex-basis: 220px !important;
+  }
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]) {
+    flex-basis: 200px !important;
+  }
+}
+
+@media print, screen and (min-width: 1800px) {
+  #top .combineSearch {
+    margin-top: -190px !important;
+    max-width:1000px !important;
   }
 
 }
