@@ -96,7 +96,21 @@ body {
   }
   
 
+  #top .combineSearch .combineSearchWrapper {
+    max-width: 1000px !important;
+  }
+  #top .topContentBox .contentInner {
+    max-width: 1000px !important;
+  }
 
+}
+@media print, screen and (min-width: 1400px) {
 
+  #top .combineSearch .combineSearchWrapper {
+    max-width: 1200px !important;
+  }
+  #top .topContentBox .contentInner {
+    max-width: 1200px !important;
+  }
 
 }
