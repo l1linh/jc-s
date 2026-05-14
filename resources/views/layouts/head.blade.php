@@ -46,7 +46,7 @@
     <link rel="stylesheet" type="text/css" media="all" href="{{asset('css/jquery.bxslider.css')}}"/>
     <link rel="stylesheet" type="text/css" media="all" href="{{asset('css/cbslideheader.css')}}"/>
     <link rel="stylesheet" type="text/css" media="all" href="{{asset('css/swiper.min.css')}}"/>
-
+    <link rel="stylesheet" href="https://use.typekit.net/opb5mxf.css">
     @vite([$sassImportFilePath])
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
