@@ -70,6 +70,64 @@ body {
 
 
 
+/* --------------------.form---------------------} */
+
+
+
+/* Tạo mũi tên bằng pseudo-element */
+
+#top .combineSearch div.selectBox div.selectBoxInner .boxFlex:first-child #pref.title::before {
+  right: 25px !important;
+  top: 45px !important;
+  width: 16px;
+  height: 12px;
+  pointer-events: none;
+  left: unset !important;
+  z-index: 99;
+   background-image: url(../images/common/Polygon.svg);
+}
+#top .combineSearch   #city {
+  position: relative;
+  display: block;
+}
+#top .combineSearch  #city::after {
+  position: absolute !important;
+  color: "" !important;
+  right: 25px !important;
+  top: 45px !important;
+  width: 16px;
+  height: 12px;
+  pointer-events: none;
+  left: unset !important;
+  z-index: 99;
+   background-image: url(../images/common/Polygon.svg);
+}
+#top .combineSearch div.selectBox div.selectBoxInner .boxFlex:first-child #quickSearchJobBox.title::before {
+  right: 25px !important;
+  top: 45px !important;
+  width: 16px;
+  height: 12px;
+  pointer-events: none;
+  left: unset !important;
+  z-index: 99;
+   background-image: url(../images/common/plus.svg);
+}
+
+#top .combineSearch div.selectBox div.selectBoxInner .boxFlex:first-child #quickSearchFeatureBox.title::before {
+  right: 25px !important;
+  top: 45px !important;
+  width: 16px;
+  height: 12px;
+  pointer-events: none;
+  left: unset !important;
+  z-index: 99;
+   background-image: url(../images/common/plus.svg);
+}
+
+
+
+
+
 /* --------------------.combineSearch----------------------} */
 
 
@@ -137,7 +195,7 @@ body {
   #top .combineSearch div.selectBox div.selectBoxInner {
     padding: 48px 30px 15px !important;
     width: 100%;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.1) !important;
     margin-top: -30px !important;
     border-radius: 10px;
   }
@@ -162,6 +220,7 @@ body {
 
 
 }
+
 
 
 @media print, screen and (min-width: 1400px) {
@@ -193,6 +252,27 @@ body {
   #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]) {
     flex-basis: 200px !important;
   }
+
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]).submitBtnWrapper {
+    flex-basis: 220px !important;
+    position: relative;
+  }
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]).submitBtnWrapper::after {
+    content: "";
+    position: absolute;
+    background-image: url(../images/common/icon_serch_tb.svg);
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    left: 15px;
+    transform: scale(1);
+  }
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]).submitBtnWrapper::after:hover {
+    background: none !important;
+    opacity: 0.7;
+  }
+
+
 }
 
 @media print, screen and (min-width: 1800px) {
@@ -202,3 +282,15 @@ body {
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

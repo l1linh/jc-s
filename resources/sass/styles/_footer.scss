@@ -6,10 +6,12 @@ footer
     position: relative;
     width: 100%;
     margin: 0;
-    padding: 20px 0;
-    background: $footerBgColor;
-    color: $footerTextColor;
-
+    padding: 0;
+    background-color: #fff;
+    
+    color: black;
+    overflow: hidden;
+    
     &::after {
         content: "";
         display: block;
@@ -17,7 +19,7 @@ footer
         bottom: 0;
         width: 100%;
         height: 44px;
-        background: $footerBgColor;
+        background: none;
         //background: #4169E1;
         z-index: 0;
         @include xs {
@@ -175,6 +177,34 @@ footer
     width: calc(100% - 24px);
     max-width: $contentWidth;
     margin: 0 auto;
+    height: 465px;
+    overflow: visible;
+    @include xs {
+      height: 200px;
+    }
+
+    &::before{
+      content: "";
+      position: absolute;
+      background-image: url(/public/images/common/footer_pc.png);
+      // width: min(98.96vw, 1900px);
+      width: 1900px;
+      height: 100%;
+      // background-size: min(98.96vw, 1900px);
+      background-size: 1900px;
+      background-position: left bottom;
+      bottom: 0;
+      left: min(0.73vw, 14px);
+
+      @include xs {
+        background-image: url(/public/images/common/footer_sp.png);
+        width: 575px;
+        background-size: 575px;
+        left: min(19.2vw, 72);
+      }
+
+    }
+
     @include minWidthXs {
       flex-direction: row;
       align-items: baseline;

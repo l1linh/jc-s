@@ -75,7 +75,7 @@ if(isset($frontendSettings['footer']['corpInfo']['type']) || isset($frontendSett
                 </div>
                 @endif
                 @if(isset($frontendSettings['footer']['displayAddress']) && $frontendSettings['footer']['displayAddress'])
-                <div class="footerAddress">
+                {{-- <div class="footerAddress">
                     @php
                         $footerZipCode = $frontendSettings['footer']['corpInfo']['zipCode'] ?? $corporations[0]['zip'] ?? '';
                         $footerAddress = $frontendSettings['footer']['corpInfo']['address'] ?? $corporations[0]['address'] ?? '';
@@ -94,7 +94,7 @@ if(isset($frontendSettings['footer']['corpInfo']['type']) || isset($frontendSett
                     @if($footerFax)
                         <p>FAX：{{$footerFax}}</p>
                     @endif
-                </div>
+                </div> --}}
                 @endif
                 @if(isset($frontendSettings['footer']['displayCopyright']) && $frontendSettings['footer']['displayCopyright'])
                 <p class="copyright">

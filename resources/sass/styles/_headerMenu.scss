@@ -161,9 +161,10 @@ body.modalOn {/* モーダルON時にbody要素のスクロールを止める＆
     [class*="letter"] {
       display: block;
       min-height: 0;
-      color: $spHeaderMenuTextColor;
+      color: white;
       line-height: 1.4;
       text-align: center;
+      
     }
 
     .letterTop {
@@ -175,10 +176,11 @@ body.modalOn {/* モーダルON時にbody要素のスクロールを止める＆
       margin-top: 2px;
       font-family: "futura-pt", sans-serif;
       font-weight: 600;
-      font-size: rem(25);
+      font-size: 14px;
       font-style: normal;
       line-height: 1.24;
       letter-spacing: 0.04em;
+    
     }
 
     &#memberNav {
@@ -230,16 +232,17 @@ body.modalOn {/* モーダルON時にbody要素のスクロールを止める＆
     border: none;
 
     .heartBox {
-      background-image: url("#{$imgDir}icon/favo_ico.svg");
+      // background-image: url("#{$imgDir}icon/favo_ico.svg");
+      background-image: url(/public/images/common/heart.svg);
       background-size: contain;
       background-position: center;
       //width: 36px;
       //height: 36px;
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       margin: 0 auto;
       position: relative;
-
+      margin-bottom: 5px;
       .heartIcon {
         overflow: inherit;
 
@@ -260,12 +263,12 @@ body.modalOn {/* モーダルON時にbody要素のスクロールを止める＆
       //bottom: 2px;
       right: -5px;
       bottom: -5px;
-      width: 16px;
-      height: 16px;
-      //background: $favoriteCountBgColor;
-      //border-radius: 50%;
-      color: $favoriteCountTextColor;
-      //font-size: rem(10);
+      width: 18px;
+      height: 18px;
+      background: white;
+      border-radius: 50%;
+      color: #3FBDE2;
+      font-size: rem(10);
       font-size: rem(12);
       font-weight: 700;
       line-height: 1;
@@ -282,7 +285,7 @@ body.modalOn {/* モーダルON時にbody要素のスクロールを止める＆
 
     .letterBottom {
       display: block;
-      font-size: 1rem;
+      font-size: 14px;
     }
   }
 
@@ -332,7 +335,7 @@ body.modalOn {/* モーダルON時にbody要素のスクロールを止める＆
         }
       }
       &.navItemEntry {
-        padding-top: 10px;
+        padding-top: 40px;
         .js-clickitem {
           background-color: $mainColor;
         }
@@ -425,7 +428,7 @@ body.modalOn {/* モーダルON時にbody要素のスクロールを止める＆
       border: none;
 
       [class*="letter"] {
-        color: $bgBaseTextColor;
+        color: white;
       }
 
       .letterTop {
@@ -435,10 +438,7 @@ body.modalOn {/* モーダルON時にbody要素のスクロールを止める＆
 
       .js-clickitem {
         &:hover {
-          opacity: 1;
-          [class*="letter"] {
-            color: $mainColor;
-          }
+
         }
       }
 
@@ -446,9 +446,21 @@ body.modalOn {/* モーダルON時にbody要素のスクロールを止める＆
 
     .navItemBg {
       flex: 0 1 182px;
-      //margin-left: .5em;
+      position: relative;
       margin-right: 0;
       padding: 0;
+      color: white;
+      
+    }
+    .navItemEntry {
+      .js-clickitem {
+        padding-top: 37px;
+      }
+    }
+    .navItemFavorite {
+      .js-clickitem {
+ 
+      }
     }
 
     .navItemEntry,.navItemFavorite {
@@ -456,6 +468,7 @@ body.modalOn {/* モーダルON時にbody要素のスクロールを止める＆
       justify-content: center;
       align-items: center;
       flex-basis: 80px;
+      font-size: 14px;
       .navItemFlex {
         width: 100%;
         background: $accentColor;
@@ -475,12 +488,29 @@ body.modalOn {/* モーダルON時にbody要素のスクロールを止める＆
 
       &:hover {
         .navItemFlex {
-          background: $white;
+          opacity: 0.7;
         }
       }
     }
 
     .navItemSearch {
+      font-size: 16px;
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url(/public/images/common/icon_serch_tb.svg);
+        width: 30px;
+        height: 30px;
+        top: 25px;
+        left: 25px;
+        transform: scale(1);
+        @media print, screen and (max-width: 767px){
+            display: none;
+        }
+      }
+      &:hover {
+        opacity: 0.7;
+      }
       
       .js-clickitem{
         width: 100%;
@@ -493,15 +523,25 @@ body.modalOn {/* モーダルON時にbody要素のスクロールを止める＆
     }
 
     .navItemEntry {
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url(/public/images/common/icon.svg);
+        width: 30px;
+        height: 30px;
+        top: 15px;
+        left: 25px;
+        transform: scale(1);
+        @media print, screen and (max-width: 767px){
+            display: none;
+        }
+      }
+
       .navItemFlex {
         background: $mainColor;
       }
       &:hover {
-        .navItemFlex {
-          [class*="letter"] {
-            color: $accentColor;
-          }
-        }
+     
       }
     }
 
