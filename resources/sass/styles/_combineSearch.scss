@@ -106,6 +106,7 @@ combineSearch　クイックサーチ
       display: block;
       padding: 18px 30px 0;
       width: 100%;
+      background: white;
       @include minWidthXs {
           @media screen and (max-width: 1244px) {
               padding: 18px 18px 0;
@@ -128,6 +129,7 @@ combineSearch　クイックサーチ
           }
           &.freeword {
               flex-wrap: wrap;
+             
               h4 {
                   width: 100%;
                   color: #3E3E3E;
@@ -145,6 +147,7 @@ combineSearch　クイックサーチ
                   display: flex;
                   border-top: 2px solid #FFF;
                   border-bottom: 2px solid #FFF;
+                  justify-content: center;
               }
           }
           &.counter {
@@ -342,7 +345,7 @@ combineSearch　クイックサーチ
           @extend %quickSearchAppearanceNoneBase;
           //padding: 10px 20px;
           //background: $searchSubmitBtnColor;
-          background: #FD8C34;
+          background: #FFBE10;
           display: block;
           color: $searchSubmitBtnFontColor;
           font-size: rem(18);
@@ -351,7 +354,7 @@ combineSearch　クイックサーチ
           transition: all .3s;
           width: 100%;
           height: 50px;
-          border: solid 2px #FD8C34;
+          // border: solid 2px #FD8C34;
           position: relative;
           border-radius: 25px;
           overflow: hidden;
@@ -359,11 +362,12 @@ combineSearch　クイックサーチ
           z-index: 0;
           @media print, screen and (min-width: 1201px){
               &:hover {
-                  cursor: pointer;
-                  color: #FD8C34;
-                  &::before {
-                      transform: translateX(0);
-                  }
+                  // cursor: pointer;
+                  // color: #FD8C34;
+                  // &::before {
+                  //     transform: translateX(0);
+                  // }
+                  opacity: 0.7;
               }
           }
           @include xs {

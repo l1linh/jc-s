@@ -1,13 +1,16 @@
 <div id="latestJob" class="latestJob">
     <div class="latestJobInner">
-        <h2 class="latestJobTitle">
-            <span class="en">NEW JOBS</span>
-            <span class="ja">新着の求人情報</span>
-        </h2>
-
-        <div id="latestJobSwiper" class="latestJobBox swiper-latestOneLine">
-
+        <div class="info-inner">
+            <h2 class="latestJobTitle">
+                <span class="ja">新着の求人情報</span>
+                <span class="en">NEW JOBS</span>
+            </h2>
+    
+            <div id="latestJobSwiper" class="latestJobBox swiper-latestOneLine">
+    
+            </div>
         </div>
+
 
         <a href="{{route('search.query')}}" class="latestJobMoreButton">
             <span class="buttonText">MORE</span>

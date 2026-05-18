@@ -36,8 +36,12 @@ if(isset($frontendSettings['footer']['corpInfo']['type']) || isset($frontendSett
         <div id="pageTop" class="pageTop">
             <a href="#" class="pageTopAnchor">
 {{--                <i class="fas fa-arrow-up"></i>--}}
-                <i class="fas fa-chevron-up"></i>
-                <span>TOP</span>
+                {{-- <i class="fas fa-chevron-up"></i> --}}
+                <svg width="31" height="18" viewBox="0 0 31 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.4494 0.325232C14.8459 -0.108489 15.5291 -0.108489 15.9256 0.325231L30.1111 15.8431C30.6977 16.4848 30.2424 17.5178 29.373 17.5178L1.00202 17.5178C0.132566 17.5178 -0.322694 16.4848 0.263933 15.8431L14.4494 0.325232Z" fill="white"/>
+                    </svg>
+                    
+                <span>Page<br>Top</span>
             </a>
         </div><!-- #pageTop -->
         <div id="searchJobsBtn" class="SPdisp">

@@ -5,38 +5,55 @@
 .latestJob {
   display: none;
   padding: 15px calc(100vw / 750 * 40) 35px;
-  background: $baseBgColor;
+  background: #47B08B;
   @include minWidthXs {
     padding: 35px 0;
+    background: none;
   }
 }
 
 .latestJobInner {
-  display: flex;
+  display: block;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   width: calc(100% - 24px);
-  max-width: $contentWidth;
+  max-width: 1248px;
   margin: 0 auto;
+  background: #47B08B;
+  border-radius: 60px;
+  padding: 15px 100px;
+  position: relative;
+  .info-inner {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 16px
+  }
+
   @include xs {
     position: relative;
     width: 100%;
+    padding: 15px 12px;
+    .info-inner {
+      width: 80%;
+      display: block;
+    }
   }
 }
 
 .latestJobTitle {
   width: 100%;
   margin-bottom: 15px;
+  
   @include minWidthXs {
-    width: 120px;
+    // width: 150px;
     margin-bottom: 0;
   }
 
   .en,
   .ja {
     display: block;
-    color: $bgBaseTextColor;
+    color: white;
     line-height: 1;
   }
 
@@ -52,7 +69,7 @@
   }
 
   .ja {
-    display: none;
+
     font-size: rem(12);
     font-weight: 500;
     @include minWidthXs {
@@ -80,7 +97,7 @@
   }
 
   a {
-    color: $bgBaseTextColor;
+    color: white;
     transition: opacity .3s;
     @include minWidthXs {
       &:hover {
@@ -102,23 +119,24 @@
 
 .latestJobMoreButton {
   display: block;
-  width: 70px;
-  //padding: 6px 4px;
-  padding: 0 4px;
-  //border: solid 1px $latestJobMoreButtonBgColor;
-  color: $bgBaseTextColor;
+  color: white;
   font-family: "futura-pt", sans-serif;
   font-weight: 600;
   font-style: normal;
   letter-spacing: 0.05em;
   line-height: 1.5;
   text-align: center;
-  //transition-property: background, color;
-  //transition-duration: .3s;
   transition: all 0.3s ease;
+  position: absolute;
+  width: 47px;
+  height: 23px;
+  border: 1px solid;
+  padding: 5px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &:hover {
-    //background: $latestJobMoreButtonBgColor;
-    //color: $latestJobMoreButtonTextColor;
     cursor: pointer;
     .buttonText {
       opacity: 0.6;
@@ -133,17 +151,23 @@
   @include minWidthXs {
     width: 90px;
     border-width: 2px;
+    right: 120px;
+    bottom: 17px;
   }
   @include xs {
-    position: absolute;
-    right: 0;
-    top: -5px;
+        right: 0;
+        top: unset;
+        bottom: 15px;
+        width: 47px;
+        height: 23px;
+        border: 1px solid;
+        padding: 5px;
   }
 
   .buttonText {
     font-size: rem(13);
     &::after {
-      content: '\f061';
+      // content: '\f061';
       display: inline-block;
       position: relative;
       top: -2px;
@@ -241,7 +265,7 @@
                 }
                 .newInfoDate {
                     font-size: $fontSizeSmall;
-                    color: $baseTextColor;
+                    color: white;
                     padding: 0;
                     width: 90px;
                     line-height: 2;
@@ -251,7 +275,7 @@
                     }
                 }
                 .newInfoTag {
-                    color: $baseTextColor;
+                  color: white;
                     width: 75%;
                     text-align: left;
                     font-size: $fontSizeNomal;
@@ -264,7 +288,7 @@
                     }
                 }
                 .newInfoDetail {
-                    color: $baseTextColor;
+                  color: white;
                     font-size: $fontSizeNomal;
                     padding: 0 15px 0 93px;
                     width: 100%;

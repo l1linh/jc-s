@@ -72,7 +72,9 @@ body {
 
 /* --------------------.form---------------------} */
 
-
+#top .combineSearch div.selectBox .modalBg {
+  background-color: rgb(225, 225, 225, 0.5) !important;
+}
 
 /* Tạo mũi tên bằng pseudo-element */
 
@@ -125,9 +127,17 @@ body {
 }
 
 
+#top .combineSearch div.selectBox div.selectBoxInner {
+  padding: 28px 15px 15px !important;
+  width: 100%;
+  box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.1) !important;
+  margin-top: -15px !important;
+  border-radius: 5px;
+}
 
-
-
+#top .combineSearch .combineSearchWrapper {
+  box-shadow: none !important;
+}
 /* --------------------.combineSearch----------------------} */
 
 
@@ -144,9 +154,35 @@ body {
   background: none !important;
 }
 
+#top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]) button {
+  background: #FFBE10 !important;
+  border: 0px !important;
+  margin: auto;
+}
 
+#top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]).submitBtnWrapper {
+  flex-basis: 170px !important;
+  position: relative;
+}
+#top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]).submitBtnWrapper::after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/common/icon_serch_tb.svg);
+  width: 30px;
+  height: 30px;
+  top: 7px;
+  left: 14px;
+  transform: scale(0.8);
+}
 
-
+#top .combineSearch div.selectBox .combineSearchTitle {
+  height: 35px !important;;
+  padding-left: 30px;
+  max-width: 240px !important;;
+  margin: auto !important;;
+  border-radius: 5px ;
+  background: #47B08B !important;
+}
 
 @media print, screen and (min-width: 768px) {
   
@@ -169,10 +205,7 @@ body {
   #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]) {
     flex-basis: 180px !important;
   }
-  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]) button {
-    background: #FFBE10 !important;
-    border: 0px !important;
-  }
+
   #top .topContentBox .contentInner {
     max-width: 1000px !important;
   }
@@ -200,16 +233,14 @@ body {
     border-radius: 10px;
   }
 
-  #top .combineSearch .combineSearchWrapper {
-    box-shadow: none !important;
-  }
+
 
   #top .combineSearch div.selectBox div.selectBoxInner .boxFlex.freeword h4 {
     width: 160px !important;
   }
   #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]).freeword {
     padding-top: 0px !important; 
-    flex-basis: 480px !important;
+    flex-basis: 390px !important;
   }
   #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]) select, #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]) input {
     height: 44px !important;
@@ -218,7 +249,24 @@ body {
     border-radius: 5px !important;
  }
 
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]).submitBtnWrapper {
+    flex-basis: 220px !important;
+    position: relative;
+  }
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]).submitBtnWrapper::after {
+    content: "";
+    position: absolute;
+    background-image: url(../images/common/icon_serch_tb.svg);
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    left: 15px;
+    transform: scale(1);
+  }
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]).submitBtnWrapper::after:hover {
+    opacity: 0.7;
 
+  }
 }
 
 
@@ -253,25 +301,15 @@ body {
     flex-basis: 200px !important;
   }
 
-  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]).submitBtnWrapper {
-    flex-basis: 220px !important;
-    position: relative;
-  }
-  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]).submitBtnWrapper::after {
-    content: "";
-    position: absolute;
-    background-image: url(../images/common/icon_serch_tb.svg);
-    width: 30px;
-    height: 30px;
-    top: 10px;
-    left: 15px;
-    transform: scale(1);
-  }
+
   #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]).submitBtnWrapper::after:hover {
     background: none !important;
     opacity: 0.7;
   }
-
+  #top .combineSearch div.selectBox div.selectBoxInner span:not([class^=tick]).freeword {
+    padding-top: 0px !important; 
+    flex-basis: 480px !important;
+  }
 
 }
 
@@ -282,6 +320,16 @@ body {
   }
 
 }
+
+
+
+
+
+/* --------------------page Top ----------------------} */
+
+
+
+
 
 
 
