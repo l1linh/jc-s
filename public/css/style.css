@@ -337,7 +337,7 @@ body {
   color: #072C40;
 }
 
-/* --------------------overview----------------------} */
+/* -------------overview--------------} */
 
 #top #overview .title-overview {
   font-size: min(23px, 6.13vw);
@@ -366,6 +366,7 @@ body {
   overflow: visible;
   min-height: min(517px, 137.87vw);
   padding: min(43px, 11.47vw) 0px 0px;
+  margin-bottom: 27px;
 }
 #top  #overview::after {
   position: absolute;
@@ -399,6 +400,7 @@ body {
     min-height: 405px;
     z-index: 99;
     padding: min(70px, 3.65vw) 0px min(10px, 0.52vw);
+    margin-bottom: 145px;
   }
   
   #top #overview .title-overview {
@@ -430,13 +432,13 @@ body {
   }
   
   #top #overview .dt-over {
-    font-size: 26px;
+    font-size: 30px;
     line-height: 30px;
     margin-bottom: 35px;
   }
   
   #top #overview .dd-over {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 28px;
   }
 
@@ -456,32 +458,214 @@ body {
     }
 
     #top #overview .dt-over {
-      font-size: min(30px, 1.56vw);
-      line-height: min(44px, 2.29vw);
+      font-size: 30px;
+      line-height: 44px;
       margin-bottom: min(40px, 2.08vw);
     }
     
     #top #overview .dd-over {
-      font-size: min(18px, 0.94vw);
-      line-height: min(33px, 1.72vw);
+      font-size: 18px;
+      line-height: 33px;
     }
 
   }
-
-
-
-
-
-
-
 
 
 
 }
 
-/* @media print, screen and (min-width: 1950px) {
-  #top  #overview::before {
-    bottom: 50px;
-    left: 0px;
+
+
+/* -------------pickup-------------} */
+#top #pickup .contentHeading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+#top #pickup .contentHeading .en{
+  font-size: 35px;
+  color: #47B08B;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 1px;
+  line-height: 1.15;
+}
+
+#top #pickup .contentHeading .ja{
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 0px;
+}
+#top #pickup .item-pic {
+  margin-bottom: 30px;
+}
+#top #pickup .title-pic {
+  font-size: 15px;
+  text-align: center;
+  font-weight: 700;
+  color: #47B08B;
+  margin-bottom: 8px;
+}
+#top #pickup  .box-img {
+  width: 85%;
+  margin: auto;
+}
+#top #pickup .buton-pic {
+  width: 170px;
+  height: 35px;
+  line-height: 35px;
+  background: #FFBE10;
+  border-radius: 30px;
+  position: relative;
+  color: white;
+  font-size: 14px;
+  padding-left: 25px;
+  margin: auto;
+  display: block;
+  margin-top: -17px;
+}
+#top #pickup .buton-pic::after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/common/icon_serch_tb.svg);
+  width: 30px;
+  height: 30px;
+  top: 4px;
+  left: 29px;
+  transform: scale(0.58);
+}
+
+
+@media print, screen and (min-width: 768px) {
+
+  #top #pickup .list-pic {
+    display: grid;
+    max-width: fit-content;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
-} */
+  #top #pickup  .box-img {
+    width: 100%;
+  }
+  #top #pickup .buton-pic {
+    margin-top: 30px;
+    width: 220px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+  }
+  #top #pickup .contentHeading {
+    margin-bottom: 55px;
+  }
+  #top #pickup .contentHeading .en {
+    font-size: 70px;
+  }
+  #top #pickup .contentHeading .ja {
+    font-size: 26px;
+    margin-top: 5px;
+  }
+  #top #pickup .title-pic {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+  #top #pickup .buton-pic::after {
+    top: 11px;
+    left: 26px;
+    transform: scale(0.8);
+  }
+}
+
+@media print, screen and (min-width: 1400px) {
+  #top #pickup .title-pic {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+}
+
+/* -------------message-------------} */
+
+#top #message {
+  height: 3100px;
+  position: relative;
+  padding: 87px 0px;
+} 
+
+#top #message::after {
+  position: absolute;
+  content: "";
+  background-image: url(../images/contentBox/top/bg_messge_sp.png);
+  z-index: -1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 190px;
+  top: 0;
+}
+
+#top #message::before {
+  position: absolute;
+  content: "";
+  background-image: url(../images/contentBox/top/bg_messge2_sp.png);
+  z-index: -1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  height: 220px;
+}
+
+
+
+
+@media print, screen and (min-width: 768px) {
+
+#top #message::after {
+  background-image: url(../images/contentBox/top/bg_messge_pc.png);
+  z-index: -1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 1074px;
+  top: 15.5%;
+}
+
+#top #message::before {
+  position: absolute;
+  content: "";
+  background-image: url(../images/contentBox/top/bg_messge2_pc.png);
+  z-index: -1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  bottom: 3.5%;
+  height: 1190px;
+}
+
+
+}
+
+
+@media print, screen and (min-width: 1900px) {
+  #top #message::after {
+    background-size: cover;
+  }
+  
+  #top #message::before {
+
+    background-size: cover;
+
+  }
+
+}
