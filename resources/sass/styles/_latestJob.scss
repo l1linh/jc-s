@@ -18,11 +18,11 @@
   align-items: center;
   justify-content: space-between;
   width: calc(100% - 24px);
-  max-width: 1248px;
+  max-width: 1200px;
   margin: 0 auto;
   background: #47B08B;
   border-radius: 60px;
-  padding: 15px 100px;
+  padding: 15px 120px;
   position: relative;
   .info-inner {
     display: grid;
@@ -111,7 +111,7 @@
   display: block;
   width: 100%;
   @include minWidthXs {
-    display: inline;
+    display: block;
     width: auto;
     margin-right: 1em;
   }
