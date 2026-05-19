@@ -24,9 +24,6 @@
         <x-contentBox.contentOverview />
         <x-contentBox.contentPickup />
         <x-contentBox.contentMessage />
-        <x-contentBox.contentJobseeker />
-        <x-contentBox.contentAboutus />
-        <x-contentBox.contentWay />
     </div>
 
     @if(isset($fEntSearchAxisData))
